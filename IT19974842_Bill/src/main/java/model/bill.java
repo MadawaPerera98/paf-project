@@ -40,7 +40,7 @@ public class bill {
 						return "Error while connecting to the database for inserting.";
 					}
 					// create a prepared statement
-					String query = " insert into bill ('billid','accno','musage','totbill','cname')" + " values (?, ?, ?, ?,?)";
+					String query = "Insert into bill ('billid','accno','musage','totbill','cname')" + " values (?, ?, ?, ?,?)";
 					PreparedStatement preparedStmt = con.prepareStatement(query);
 					// binding values
 					preparedStmt.setString(1, billid);
@@ -51,7 +51,7 @@ public class bill {
 					// execute the statement
 					preparedStmt.execute();
 					con.close();
-					output = "EBill Inserted successfully";
+					output = "E-Bill Inserted successfully";
 				}
 				catch (Exception e)
 				{
@@ -165,7 +165,6 @@ public class bill {
 						return "Error while connecting to the database for deleting."; 
 					}
 			 
-			 
 					// create a prepared statement for delete 
 					String query = "delete from bill where billid=?";
 					PreparedStatement preparedStmt = con.prepareStatement(query);
@@ -183,7 +182,6 @@ public class bill {
 				}
 				return output;
 			}
-			
 }
 
 
